@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none !important;
+  transition: .5s !important;
+  text-decoration: none !important;
+}
+
+body {
+  opacity: 0;
+  animation: load 1s forwards;
+}
+
+@keyframes load {
+  100% {
+    opacity: 1;
+  }
+}
+
+.load {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.load img {
+  max-width: 300px;
+  margin: auto;
+  display: flex !important;
+  margin-top: 240px;
+  justify-content: center !important;
+}
+
+@media(max-width:992px) {
+  .load img {
+    width: 200px;
+  }
+}
+
+.col-lg-6 .list_videos {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  justify-content: flex-end;
+}
+
+.col-lg-6 .list_videos .preview {
+  max-width: 300px !important;
+  height: 100px !important;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.videoitems {
+  display: flex;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px;
+  background-color: rgb(245, 245, 245);
+
+}
+
+@media(max-width:992px) {
+  .col-lg-6 .list_videos {
+    margin-left: 0px;
+    justify-content: center;
+  }
+
+  .searchApi {
+    width: 700px;
+  }
+
+  .col-lg-6 .list_videos .preview {
+    width: 100px;
+
+    height: 100px !important;
+  }
+
+  .videoitems b {
+    font-size: 12px !important;
+
+  }
+  .videoitems {
+    max-width: 100%;
+
+  }
+
+  .father {
+    margin-top: 60px;
+  }
+}
+
+.videoitems b {
+  font-size: 14px;
+}
+
+.videoitems:hover {
+  transform: translateX(-20px);
+  filter: brightness(90%);
+  cursor: pointer;
+
+}
+
+.current_video iframe {
+  border-radius: 10px;
+
+}
+
+.current_video {
+  width: 120%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+
+}
+
+.youtubeicon {
+  color: red;
+
+}
+
+@media(max-width:1280px) {
+  .current_video {
+    width: 100%;
+  }
+}
+
+.current_video h1 {
+  font-size: 28px;
+  margin-top: 25px;
+}
+
+.channel {
+  max-width: 100px;
+}
+
+.searchApi {
+  width: 60%;
+  margin: auto;
+  height: 50px;
+  border-radius: 30px;
+
+  font-size: 20px;
+  padding: 20px;
+  outline: none;
+  border: 1px solid silver;
+  margin: 10px;
+
+}
+
+.input {
+  display: contents;
+
+}
+
+@media(max-width:590px) {
+  .searchApi {
+    width: 70%;
+    margin: 20px;
+  }
+  .videoinfo h1{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .videoinfo p{
+    padding: 10px !important;
+    text-align: center;
+    margin-top: 40px;
+
+  }
+
+}
+.photo_user{
+  border-radius: 50%;
+}
+.boy {
+  width: 100%;
+  height: 900px;
+  position: fixed;
+
+  top: 0;
+  margin-top: 100px;
+  left: 0;
+  background-color: white;
+}
+.app{
+  width: 100% !important;
+  height: 100% !important;
+}
+#light{
+  background-color: white;
+}
+#dark .boy{
+  background: black;
+}
+#dark{
+  background-color: black;
+}
+#dark .searchApi{
+  background-color: rgb(34, 34, 34);
+  color: white;
+  border: none;
+}
+#dark  .current_video{
+color: white;
+  background-color: rgb(34, 34, 34);
+}
+
+#dark  .videoitems{
+  color: white;
+  background-color: rgb(48, 48, 48);
+}
+.icon {
+  font-size: 30px;
+}
+
+.youtubelink {
+  max-width: 150px;
+}
+.videoinfo {
+margin-left: 20px;
+}
+.videoinfo p{
+  padding-right: 200px;
+  margin-top: 30px;
+};
