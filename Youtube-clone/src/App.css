@@ -163,8 +163,15 @@ body {
 
 @media(max-width:590px) {
   .searchApi {
-    width: 70%;
-    margin: 20px;
+    width: 100% !important;
+    margin-top: 60px !important;
+
+  }
+  .mode{
+    height: 100%;
+  }
+  .account{
+    height: 100%;
   }
   .videoinfo h1{
     text-align: center;
@@ -175,6 +182,9 @@ body {
     text-align: center;
     margin-top: 40px;
 
+  }
+  .boy{
+  margin-top: 140px !important;
   }
 
 }
@@ -232,3 +242,22 @@ margin-left: 20px;
   padding-right: 200px;
   margin-top: 30px;
 };
+
+.signs{
+  cursor: pointer;
+}
+body{
+  position: relative;
+  overflow-x: hidden;
+}
+.account .notout{
+opacity: 0;
+position: absolute;
+right: 70px;
+  display: none !important;
+}
+.account .out{
+
+  opacity: 1;
+  display: flex !important;
+}
