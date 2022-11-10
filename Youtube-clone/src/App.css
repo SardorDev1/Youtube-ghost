@@ -167,6 +167,9 @@ body {
     margin-top: 60px !important;
 
   }
+  .signs{
+    margin-top: 50% !important;
+  }
   .mode{
     height: 100%;
   }
@@ -212,6 +215,7 @@ body {
   background: black;
 }
 #dark{
+  height: 100%;
   background-color: black;
 }
 #dark .searchApi{
@@ -243,9 +247,7 @@ margin-left: 20px;
   margin-top: 30px;
 };
 
-.signs{
-  cursor: pointer;
-}
+
 body{
   position: relative;
   overflow-x: hidden;
@@ -260,4 +262,18 @@ right: 70px;
 
   opacity: 1;
   display: flex !important;
+}
+.signs{
+ width: 300px !important;
+  min-height: 100% !important;
+display: flex;
+margin: auto !important;
+
+text-align: center !important;
+
+}
+
+.signs:hover{
+  transform: scale(1.1);
+  cursor: pointer !important;
 }

@@ -1,45 +1,62 @@
 import React, { useState } from 'react';
 import AppY from './AppY';
-import firebase from 'firebase/app';
+
 import "./App.css"
 import { useEffect } from 'react';
+
+
 import Load from "./assets/Load.gif"
 import Login from './companent/Login';
+import {auth} from "./companent/firebase/config"
+
 const App = () => {
 
-const [user , setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-useEffect( () =>{
-firebase.auth().onAuthStateChanged(user => {
-  setUser(user)
 
+  useEffect(() => {
+
+auth.onAuthStateChanged(user => {
+setUser(user)
+  
 })
-} , [])
-
-const [loading, setLoading] = useState(true)
+  }, [])
 
 
-setTimeout(() => {
+
+
+  const [loading, setLoading] = useState(true)
+
+
+  setTimeout(() => {
     setLoading(false)
-}, 7000);
-if (loading) {
+  }, 7000);
+  if (loading) {
     return (
-        <>
+      <>
 
-            <div className="load">
-                <img src={Load} alt="" />
-            </div>
+        <div className="load">
+          <img src={Load} alt="" />
+        </div>
 
-        </>
+      </>
     )
-}
+  }
 
 
   return (
-    <div>
-    {user ? <AppY user={user}/> : <Login/>}
-    
-    </div>
+    <>
+      {user ? <AppY user={user} /> : <Login />}
+    </>
+    //   <BrowserRouter>
+    //  <Routes>
+    //   <Route path='/login' element={<Login/>} />
+    //   </Routes> 
+    //   </BrowserRouter>
+    // <div>
+
+
+    // </div>
   );
 };
 

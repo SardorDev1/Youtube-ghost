@@ -11,7 +11,6 @@ import One from './One';
 
 
 
-
 const Video = ({ video: { id: { videoId, channelId  } , snippet:  {   title, channelTitle, description } } }) => {
  
 

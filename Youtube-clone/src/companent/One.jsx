@@ -5,7 +5,7 @@ const One = () => {
     return (
      
         <div  className="boy">
-<h1 className='text-center mt-5' >Youtube clone</h1>
+<h1 className='text-center mt-5' >Youtube Sardor qildi men Sardor Shoakbarov</h1>
         </div>
    
     );

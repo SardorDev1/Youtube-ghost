@@ -5,24 +5,26 @@ import Search from './companent/search';
 import Video from './companent/Video';
 import ListVideo from './companent/ListVideo';
 import ReactSwitch from 'react-switch';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { auth } from 'firebase';
+import { auth } from './companent/firebase/config';
+
+
 
 
 export const ThemeContext = React.createContext(null);
 export const SignOut = React.createContext(null);
-function AppY({user}) {
+function AppY({ user }) {
   const [theme, setTheme] = useState("light")
   const [videos, setVideos] = useState([]);
-const [out , setOut] = useState("notout btn pt-3 btn-danger text-center mx-4")
+  const [out, setOut] = useState("notout btn pt-3 btn-danger text-center mx-4")
   const [selectedvideos, setSelectedVideos] = useState({ id: {}, snippet: {} });
   const ToogleTheme = () => {
     setTheme((mode) => (mode === "light" ? "dark" : "light"))
   }
- 
+
   const Outs = () => {
-    setOut((mode) => (mode === "notout  btn pt-3 btn-danger text-center mx-4" ? "out  btn pt-3 btn-danger text-center mx-4": "notout  btn pt-3 btn-danger text-center mx-4"))
+    setOut((mode) => (mode === "notout  btn pt-3 btn-danger text-center mx-4" ? "out  btn pt-3 btn-danger text-center mx-4" : "notout  btn pt-3 btn-danger text-center mx-4"))
   }
   async function videoSubmit(searchTerm) {
     const { data: { items: videos } } = await URL.get("search", {
@@ -36,7 +38,7 @@ const [out , setOut] = useState("notout btn pt-3 btn-danger text-center mx-4")
 
 
     });
-  console.log(videos);
+    console.log(videos);
     setVideos(videos)
     setSelectedVideos(videos[0])
   }
@@ -51,15 +53,15 @@ const [out , setOut] = useState("notout btn pt-3 btn-danger text-center mx-4")
         <div className="app px-3" id={theme}>
 
           <div className="searchsection d-flex mt-2">
-      <div className="mode">
-      <ReactSwitch className='mode mt-4 ' onChange={ToogleTheme} checked={theme === "dark"} />
-      </div>
+            <div className="mode">
+              <ReactSwitch className='mode mt-4 ' onChange={ToogleTheme} checked={theme === "dark"} />
+            </div>
             <Search onSubmit={videoSubmit} />
 
             <div className="account d-flex m-2">
-            <button  className={out} onClick={() => auth().signOut()} >SignOut</button>
-       
-<img onClick={() => Outs()}  className='photo_user '  width={50} height={50} src={user.photoURL} alt="" />
+              <button className={out} onClick={() => auth.signOut()} >SignOut</button>
+
+              <img onClick={() => Outs()} className='photo_user ' width={50} height={50} src={user.photoURL} alt="" />
 
 
             </div>

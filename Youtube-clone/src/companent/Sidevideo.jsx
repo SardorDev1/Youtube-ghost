@@ -8,6 +8,7 @@ if(video.id.kind === "youtube#channel"){
 
 }
 
+
 useEffect(() => {
     AOS.init();
 })
@@ -20,7 +21,7 @@ useEffect(() => {
                     </>
                 ) :  (
                     <>
-                      <div className="videoitems" data-aos="fade-left" onClick={() => onSelectedVideo(video)} >
+                      <div className="videoitems" data-aos="fade-down-left"  onClick={() => onSelectedVideo(video)} >
                         <img className='preview' src={video.snippet.thumbnails.medium.url} alt="overlay" />
                         <div className="titleVideo">
                             <b>{video.snippet.title}</b>
